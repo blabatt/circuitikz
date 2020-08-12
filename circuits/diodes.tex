@@ -1,0 +1,71 @@
+\begin{circuitikz}[american]
+\foreach \i / \y [count=\x] in 
+{diode/0,
+Schottky d./.3, 
+Zener d./0,
+ZZener d./.3,
+tunnel d./0,
+photod./.3,
+led/0,
+varcap/.3%
+}
+\node at (\x*1.2+.5,\y+.2){\underline{\i}};
+
+\foreach \i / \l [count=\x] in 
+{empty diode/Do,
+empty Schottky diode/sDo, 
+empty Zener diode/zDo,
+empty ZZener diode/zzDo,
+empty tunnel diode/tDo,
+empty photodiode/pDo,
+empty led/leDo,
+empty varcap/VCo%
+%empty bidirectionaldiode,
+} 
+\draw(\x*1.2,-1) to[\i,l^={\Large \l}] ++(1,0);
+
+\foreach \i / \l [count=\x] in 
+{
+full diode/D*,
+full Schottky diode/sD*,
+full Zener diode/zD*,
+full ZZener diode/zzD*,
+full tunnel diode/tD*,
+full photodiode/pD*,
+full led/leD*,
+full varcap/VC*%
+%full bidirectionaldiode/biD*,
+} 
+\draw(\x*1.2,-2.5) to[\i,l^={\Large \l}] ++(1,0);
+
+\foreach \i / \l [count=\x] in 
+{
+stroke diode/D-,
+stroke Schottky diode/sD-,
+stroke Zener diode/zD-,
+stroke ZZener diode/zzD-,
+stroke tunnel diode/tD-,
+stroke photodiode/pD-,
+stroke led/leD-,
+stroke varcap/VC-%
+} 
+\draw(\x*1.2,-4) to[\i,l^={\Large \l}] ++(1,0);
+
+
+
+\foreach \i / \l / \a [count=\x] in 
+{
+triac/Tr/triac,
+%empty bidirectionaldiode,
+%full bidirectionaldiode,
+empty triac/Tro/\empty,
+full triac/Tr*/,
+thyristor/Ty/thyristor,
+empty thyristor/Tyo/,
+full thyristor/Ty*/,
+stroke thyristor/Ty-/%
+} 
+\draw(\x*1.5,-6) to[\i,l^={\Large \l},a_={\a}] ++(1,0);
+
+
+\end{circuitikz}

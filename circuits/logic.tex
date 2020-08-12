@@ -1,0 +1,22 @@
+\begin{circuitikz}[american]
+
+
+\foreach \type / \l [count=\x] in 
+{%
+american and port/and,
+nand port/nand,
+or port/or,
+american nor port/nor,
+american xor port/xor,
+american xnor port/xnor} 
+\node[\type,label={[yshift=8mm,xshift=-8mm,font=\Large]\l}] at(\x*1.5,0){};
+
+\foreach \type / \l [count=\x] in 
+{%
+american buffer port/buffer,
+american not port/not,
+schmitt,,
+invschmitt/invsch.} 
+\node[\type,label={[font=\Large]\l}] at(\x*1.5,-1.8){};
+
+\end{circuitikz}

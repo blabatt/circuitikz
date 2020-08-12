@@ -1,0 +1,18 @@
+\newcommand{\marknode}[2][45]{
+\node[circle, draw, red, inner sep=1pt,pin={[red, font=\tiny]#1:#2}] at (#2.center) {};
+}
+
+\begin{circuitikz}[american]
+
+\draw (0,0) to [R=L1, a=A1, name=L1] ++(3,0) 
+            to [R, l2_=L2 and 2L, a^=A2, name=L2] ++(3,0);
+\marknode{L1} \marknode{L1label} \marknode[0]{L1annotation}
+\marknode{L2} \marknode[0]{L2label} \marknode{L2annotation}
+\draw[blue] (L2label.south west) rectangle (L2label.north east);
+
+\draw (0,1.8) to [R=R1, v=V1, i=I1, f>^=F1, name=R1] ++(3,0) to [R, v<=V2, i^=I2, f>^=F2, name=R2] ++(3,0);
+
+\marknode[0]{R1voltage} \marknode[0]{R2voltage} \marknode[90]{R1current} \marknode[90]{R2current} \marknode{R1flow} \marknode{R2flow}
+
+\end{circuitikz}
+

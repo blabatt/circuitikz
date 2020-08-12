@@ -1,0 +1,10 @@
+\begin{circuitikz}[american]
+
+\ctikzset{multipoles/thickness=4}
+\ctikzset{multipoles/external pins thickness=2}
+\draw(0,0) node[dipchip,num pins=12,hide numbers, external pins width=0.3, external pad fraction=4,label={[yshift=-25mm]\large dipchip}](C){IC1};
+
+\ctikzset{multipoles/thickness=2}
+\ctikzset{multipoles/font={\color{red}\tiny}}
+\draw (4,0) node[qfpchip,num pins=16, external pad fraction=6,label={[yshift=-23mm]\large qfpchip}](C){IC2};
+\end{circuitikz}

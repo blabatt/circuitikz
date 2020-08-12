@@ -1,0 +1,139 @@
+\section{Text}
+
+\subsection*{Font}
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textbackslash tiny
+    \item \textbackslash scriptsize
+    \item \textbackslash footnotesize
+    \item \textbackslash small
+    \item \textbackslash normalsize
+    \item \textbackslash large
+    \item \textbackslash Large
+    \item \textbackslash LARGE
+    \item \textbackslash huge
+    \item \textbackslash Huge
+\end{itemize}
+\end{multicols}
+Font families: \\
+\begin{tabular}{l l l}
+serif & \textbackslash textrm \{text\} & \textbackslash rmfamily \\
+sans-serif & \textbackslash textsf \{text\} & \textbackslash sffamily \\
+typewriter & \textbackslash texttt \{text\} & \textbackslash ttfamily \\
+\end{tabular}
+
+\subsection*{Decorations}
+\begin{tabular}{l l}
+\begin{lstlisting}
+\textbf{text} 
+\end{lstlisting}
+& \% \textbf{text}  \\
+
+\begin{lstlisting}
+\underline{te}\ul{xt}
+\end{lstlisting}
+& \% \href{https://alexwlchan.net/2017/10/latex-underlines/}{\underline{te}\ul{xt}} \\
+
+\begin{lstlisting}
+\textit{text} 
+\end{lstlisting}
+& \% \textit{text} \\
+
+
+\begin{lstlisting}
+\textsuperscript{text} 
+\end{lstlisting}
+& \% \textsuperscript{text} \\
+
+\begin{lstlisting}
+\textsubscript{text} 
+\end{lstlisting}
+& \% \textsubscript{text} \\
+
+\begin{lstlisting}
+\color{red}text
+\end{lstlisting}
+& \% \color{red}text \\
+
+\begin{lstlisting}
+\hl{text}
+\end{lstlisting}
+& \% \hl{text} \\
+
+\end{tabular}
+
+\subsection*{Characters (more \href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{here})}
+
+\begin{tabular}{l l}
+
+\begin{lstlisting}
+\textasciicircum
+\end{lstlisting}
+& \% \textasciicircum \\
+
+\begin{lstlisting}
+\textasciitilde
+\end{lstlisting}
+& \% \textasciitilde \\
+
+\begin{lstlisting}
+\textdagger
+\end{lstlisting}
+& \% \textdagger \\
+
+\begin{lstlisting}
+\textdaggerdbl
+\end{lstlisting}
+& \% \textdaggerdbl \\
+
+\begin{lstlisting}
+\textsection
+\end{lstlisting}
+& \% \textsection \\
+
+\begin{lstlisting}
+\textparagraph
+\end{lstlisting}
+& \% \textparagraph \\
+
+\begin{lstlisting}
+\checkmark
+\end{lstlisting}
+& \% \checkmark \\
+
+\begin{lstlisting}
+$\[down|up]arrow$
+\end{lstlisting}
+& \% $\downarrow\uparrow$ \\
+
+\end{tabular}
+
+\subsection*{\href{http://mirrors.ctan.org/macros/latex/contrib/lipsum/lipsum.pdf}{Lorem Ipsem}}
+\textbackslash usepackage\{\href{http://mirrors.ctan.org/macros/latex/contrib/blindtext/blindtext.pdf}{blindtext}\} or \textbackslash usepackage\{\href{http://mirrors.ctan.org/macros/latex/contrib/lipsum/lipsum.pdf}{lipsum}\} \\
+
+\begin{tabular}{l l}
+
+\begin{lstlisting}
+\lipsum[2-4]
+\end{lstlisting} 
+& \% \textparagraph 2-4 \\
+
+\begin{lstlisting}
+\blindtext[7]
+\end{lstlisting} 
+& \% 7 repetitions \\
+
+\end{tabular}
+
+\subsection*{Alignment}
+
+\begin{tabular}{l l}
+
+\begin{lstlisting}
+\centering
+\end{lstlisting} 
+& \% center  \\
+
+\end{tabular}
+
+\ \\

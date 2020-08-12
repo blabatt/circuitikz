@@ -1,0 +1,147 @@
+
+\section{Drawing}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Paths}
+
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\[fill]draw[<setting>*]}\\
+    (<from>) -- (<to>) [-{}- (<to>)]*;
+\end{lstlisting}\end{minipage}
+
+
+
+{\scriptsize \textit{(where } \texttt{<from>}, \texttt{<to>} \textit{are coordinates ... see below)}}\\[2mm]
+\entry{40mm}{\textbackslash draw(0,0) -{}- (5,2);}{a line} \\
+\entry{40mm}{\textbackslash draw(-1,5) arc(180:120:1);}{an arc }\\
+\entry{40mm}{\textbackslash draw (210:19mm);}{polar coords} \\[2mm]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Arrows \& Arrow-Heads}
+
+\textit{Line options: }
+\begin{itemize}
+    \item width
+    \item length
+\end{itemize}
+\vspace{1mm}
+
+\textit{Arrow-head options: }
+{\scriptsize \begin{multicols}{2}
+\begin{itemize}[leftmargin=2mm,label={}]
+    \item \{stealth\}
+    \item \{stealth\textquotesingle\}
+    \item \{open triangle 45\}
+    \item \{latex reversed double\}
+\end{itemize}
+\end{multicols}}
+
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Coordinates}
+
+\code{\textbackslash coordinate(mycoord) at(1,1);}\\
+\code{\textbackslash draw(mycoord)-{}-(2,2) coordinate(mycoord2);}\\[-1mm]
+
+\textit{Create new \textbf{coordinate system}:}\\
+\code{\textbackslash begin\{scope\}[xshift=6cm]} ... \\
+
+\textit{$\exists$ various ways to reference coordinates:} \\
+\begin{tabularx}{4cm}{l l}
+    \underline{type} & \underline{example} \\
+    named & (my\_coord) \\
+    anchor & (my\_node.north east) \\
+    absolute & (1,-3) \\
+    relative & ++(2,2) \\
+    tween & (node\_a)!.25!(node\_b) \\
+    math & \$(my\_name) + (1,3)\$ \\
+    intersect & (<coor\_a> -| <coord\_b>)
+\end{tabularx} \\
+
+\entry{43mm}{\textbackslash draw[](A) -{}- ( \$(A)!.85!(B)\$ );}{tweening} \\[-2mm]
+
+\textit{3D coordinates \& drawing:}\\
+\entry{43mm}{(xyz cylindrical cs: radius=1)}{cylindrical...}\\
+\entry{43mm}{(xyz cylindrical cs: angle=90)}{...polar}\\
+\entry{43mm}{(xyz cylindrical cs: z=1cm)}{z-dir}\\
+\entry{50mm}{(xyz spherical cs:radius=1,lat.=90)}{spher.}\\
+\entry{38mm}{[canvas is xy plane at z]}{draw to 2d plane}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Nodes}
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\node[<setting>*]
+   at (<coord>)?
+   (<name>?){<text>?}
+\end{lstlisting}\end{minipage}\\
+
+\begin{tabularx}{4cm}{r l}
+    \underline{setting} & \underline{example} \\
+    anchor & west \\
+    align & right|justify \\
+    text width & .85cm \\
+    pos & .5 \\
+    below of & my\_node \\
+    text depth & 5.7cm \\
+    label & \{xshift=.5mm\} \\
+    shape & rectangle callout \\ 
+\end{tabularx} \ \\
+\vspace{1mm}
+
+
+\textit{Create a set of nodes with a \textbf{matrix}:}\\
+\entry{40mm}{\textbackslash matrix [matrix of nodes]\{}{create}\\
+\entry{40mm}{\phantom{xx}1 \& 2 \& 3 \textbackslash\textbackslash}{basic syntax}\\
+\entry{40mm}{\phantom{xx}4 \& 5 \& |red| 6 \}}{pass node opt\textquotesingle n}\\
+\textit{Other matrix options $\in$:}
+{\scriptsize 
+\begin{multicols}{3}\begin{itemize}[leftmargin=0mm,label={}]
+    \item draw
+    \item anchor
+    \item column sep
+    \item row sep
+    \item every odd col.
+    \item every even col.
+    \item row \# column \#
+    \item above delimiter
+    \item left delimiter
+\end{itemize}\end{multicols}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Edges}
+
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\path[<setting>*]
+(<from>) edge[<setting>*] (<to>);}
+\end{lstlisting}\end{minipage}
+
+\textit{... where settings $\in$: }
+{\scriptsize \begin{multicols}{3}\begin{itemize}[label={},leftmargin=0mm]
+    \item out
+    \item in
+    \item bend right
+    \item ->
+    \item <-
+    \item -\{<a\_head>[opt*]\}
+\end{itemize}\end{multicols}}
+\vspace{1mm}
+
+\textit{Shorthand edge creation:} 
+
+\entry{35mm}{(a) -{}- (b)}{straight line}\\
+\entry{35mm}{(a) -| (b)}{right $\angle$s}
+
+
+%\texttt{(<a>) -{}- (<b>)} \textit{ can also connect at right angles, like:} \texttt{(<a>) -| (<b>)} \textit{ or } \texttt{(<a>) |- (<b>)}\textit{. Line ends include: } \texttt{->}, \texttt{<->}, or \texttt{-\{<name>[<option>*]\}}
+
+
+\ \\

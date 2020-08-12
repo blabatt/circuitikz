@@ -1,0 +1,56 @@
+\section{Control}
+
+\subsection*{Content}
+\begin{minipage}{6.0cm}
+\begin{lstlisting}
+\input{file.tex}
+\end{lstlisting}
+\end{minipage} \\
+
+
+\subsection*{Variables}
+\% Define global variable \say{x}: \\
+\begin{code}{6.5}\begin{lstlisting}
+\def\x{5.0}
+\end{lstlisting}
+\end{code} \\
+
+\% Define colors: \\
+\begin{code}{6.5}\begin{lstlisting}
+\definecolor{mygrn}{HTML}{228B22}
+\end{lstlisting}
+\end{code} \\
+\begin{code}{6.5}\begin{lstlisting}
+\colorlet{mypurp}{purple!80!pink}
+\end{lstlisting}
+\end{code} \\
+
+\subsection*{Environments}
+\% Define new environment, 1 parameter
+\begin{code}{6.5}\begin{lstlisting}
+\newenvironment{code}[1]
+    {\begin{minipage}{{#1}cm}}}
+    {\end{minipage}}
+\end{lstlisting}
+\end{code} \\
+
+\subsection*{Functions}
+\% Define new function: \\
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\pgfmathsetmacro{\Va}
+    {2*sin(\a)} 
+\pgfmathresult
+\end{lstlisting}
+\end{minipage} \\
+
+\subsection*{Looping}
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\foreach \x in {<values>} 
+  {\pgfmathparse{<math_expr>}}
+  \pgfmathresult
+  <repeated_action>
+\end{lstlisting}
+\end{minipage} \\
+
+\ \\
+

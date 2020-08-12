@@ -1,0 +1,33 @@
+\section{\href{http://mirrors.ctan.org/macros/latex/required/graphics/graphics.pdf}{Graphics}}
+\begin{lstlisting}
+\usepackage{graphics}
+\end{lstlisting}
+
+
+\subsection*{includegraphics}
+\begin{lstlisting}
+\includegraphics[5,10][2,2]{a.jpg}
+\end{lstlisting}
+... creates 3x8 image of a.jpg between upper-right (5,10) and lower-left (2,2)
+
+
+\subsection*{scalebox}
+\begin{lstlisting}
+\scalebox{<h-scl>}{<v-scl>}{...}
+\end{lstlisting}
+
+
+\subsection*{resizebox}
+\begin{lstlisting}
+\resizebox{.9\linewidth}{!}{...}
+\end{lstlisting}
+... resizes content to horizontal argument; second parameter is for height resizing, where \say{!} ignores it.
+
+
+\subsection*{rotatebox}
+\begin{lstlisting}
+\rotatebox{90}{text}
+\end{lstlisting}
+... rotate \say{text} by \ang{90}.
+
+

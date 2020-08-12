@@ -1,0 +1,32 @@
+\section{Advanced}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Reusable Blocks}
+
+
+\textit{Define new commands that place one or more elements and wires, using only relative (local) coords. Commands can be parameterized and blocks and sub-block elements can/should be named:}\\[2mm]
+\code{\textbackslash newcommand* \{\textbackslash myblock\}[1]\{ } \% define cmd. \\
+\code{node[sr-ff](\#1-FF)\{\}} \% use param. \#1 \\
+%\% use only \underline{relative coordinates}: \\
+\code{node[and prt](\#1-AND1) at (\$(\#1-FF) + (0,-2)\$)}
+\code{\dots \}} \% end of definition \\[2mm]
+\% now use the newly-defined command:\\
+\code{\textbackslash draw (0,0) \textbackslash myblock[B1];} \% place block \\
+\code{\textbackslash draw (0,4) \textbackslash myblock[B2];} \% and another \\[2mm]
+\% can reference sub-block components:\\
+\code{\textbackslash draw (B1-FF.pin 1) -{}- (B2-AND.in 2); } \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{New Components}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Package Version}
+
+\href{https://tex.stackexchange.com/questions/521545/draw-flip-flop-with-circuitikz}{Upgrading on overleaf}
+
+\ \\
+

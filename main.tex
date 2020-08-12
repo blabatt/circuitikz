@@ -1,0 +1,280 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{tikz}
+\usepackage[american]{circuitikzgit}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[absolute,overlay]{textpos}
+\usepackage[top=4mm,bottom=7mm,left=4mm,right=4mm]{geometry}
+\usepackage[shortlabels]{enumitem}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{dirtytalk}
+\usepackage{verbatim}
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{xifthen}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{soul}
+
+
+
+\usepackage{graphicx}
+
+\let\bar\overline
+\newcommand{\Lim}[1]{\raisebox{0.5ex}{\scalebox{0.8}{$\displaystyle \lim_{#1}\;$}}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+%\setlist[enumerate,1]{leftmargin=5mm}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[itemize,1]{leftmargin=5mm}
+\setlength{\multicolsep}{2.0pt plus 1.0pt minus 1.0pt}%{6.0pt plus 2.0pt minus 1.5pt}% 50% of original values
+\setuldepth{examletext}
+
+
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+\definecolor{mygrey}{RGB}{54,71,76}
+\definecolor{vestablue}{HTML}{2B3F48}
+\definecolor{pastelred}{HTML}{fbb4ae}
+\definecolor{pastelblue}{HTML}{b3cde3}
+\definecolor{pastelgreen}{HTML}{ccebc5}
+\definecolor{pastelpurple}{HTML}{decbe4}
+\definecolor{pastelorange}{HTML}{fed9a6}
+\definecolor{pastelyellow}{HTML}{ffffcc}
+\definecolor{pastelbrown}{HTML}{e5d8bd}
+\definecolor{pastelpink}{HTML}{fddaec}
+\definecolor{pastelgrey}{HTML}{f2f2f2}
+\definecolor{forestgreen}{HTML}{228B22}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+%leftmargin=1mm,rightmargin=2mm,skipbelow=2mm,skipabove=2mm,
+}
+
+\newcommand{\header}{
+\begin{mdframed}[]
+\footnotesize
+\sffamily
+\Large{\textbf{CircuiTikz}} \\ 
+\footnotesize Cheatsheet, ~page~\thepage~of~2
+\end{mdframed}
+}
+
+\newenvironment{code}
+    {
+    \fboxsep0pt
+    \colorbox{pastelgrey}}
+    {
+    }
+
+
+\newcommand{\mycol}[1]{%%%
+    \begin{minipage}{12mm}%%
+        #1%%%
+    \end{minipage}%%%
+}%%%
+
+\newcommand{\mycolX}[2]{%%%
+    \begin{minipage}{{#1}}%%
+        #2%%%
+    \end{minipage}%%%
+}%%%
+
+
+\newcommand{\entry}[3]{%%%
+    \begin{minipage}{{#1}}%%
+        \code{#2}%%%
+    \end{minipage}%%%
+    \% #3
+}%%%
+
+  
+ \newenvironment{vcode}
+ {\VerbatimEnvironment
+  \begin{tcolorbox}[
+    colback=pastelgrey,
+    boxsep=1pt,left=2pt,right=2pt,top=0pt,bottom=0pt
+  ]%
+  \begin{Verbatim}}
+ {\end{Verbatim}\end{tcolorbox}}
+ 
+\lstset{%
+  basicstyle=\scriptsize\ttfamily,
+  breaklines=false,
+  aboveskip=0pt,
+  belowskip=2pt,
+  backgroundcolor = \color{pastelgrey},
+  language=[LaTeX]{TeX},
+  escapeinside={(*@}{@*)},
+}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {1.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+
+
+
+\def\multi@column@out{%
+   \ifnum\outputpenalty <-\@M
+   \speci@ls \else
+   \ifvoid\colbreak@box\else
+     \mult@info\@ne{Re-adding forced
+               break(s) for splitting}%
+     \setbox\@cclv\vbox{%
+        \unvbox\colbreak@box
+        \penalty-\@Mv\unvbox\@cclv}%
+   \fi
+   \splittopskip\topskip
+   \splitmaxdepth\maxdepth
+   \dimen@\@colroom
+   \divide\skip\footins\col@number
+   \ifvoid\footins \else
+      \leave@mult@footins
+   \fi
+   \let\ifshr@kingsaved\ifshr@king
+   \ifvbox \@kludgeins
+     \advance \dimen@ -\ht\@kludgeins
+     \ifdim \wd\@kludgeins>\z@
+        \shr@nkingtrue
+     \fi
+   \fi
+   \process@cols\mult@gfirstbox{%
+%%%%% START CHANGE
+\ifnum\count@=\numexpr\mult@rightbox+2\relax
+          \setbox\count@\vsplit\@cclv to \dimexpr \dimen@-1cm\relax
+\setbox\count@\vbox to \dimen@{\vbox to 14mm{\header}\unvbox\count@\vss}%
+\else
+      \setbox\count@\vsplit\@cclv to \dimen@
+\fi
+%%%%% END CHANGE
+            \set@keptmarks
+            \setbox\count@
+                 \vbox to\dimen@
+                  {\unvbox\count@
+                   \remove@discardable@items
+                   \ifshr@nking\vfill\fi}%
+           }%
+   \setbox\mult@rightbox
+       \vsplit\@cclv to\dimen@
+   \set@keptmarks
+   \setbox\mult@rightbox\vbox to\dimen@
+          {\unvbox\mult@rightbox
+           \remove@discardable@items
+           \ifshr@nking\vfill\fi}%
+   \let\ifshr@king\ifshr@kingsaved
+   \ifvoid\@cclv \else
+       \unvbox\@cclv
+       \ifnum\outputpenalty=\@M
+       \else
+          \penalty\outputpenalty
+       \fi
+       \ifvoid\footins\else
+         \PackageWarning{multicol}%
+          {I moved some lines to
+           the next page.\MessageBreak
+           Footnotes on page
+           \thepage\space might be wrong}%
+       \fi
+       \ifnum \c@tracingmulticols>\thr@@
+                    \hrule\allowbreak \fi
+   \fi
+   \ifx\@empty\kept@firstmark
+      \let\firstmark\kept@topmark
+      \let\botmark\kept@topmark
+   \else
+      \let\firstmark\kept@firstmark
+      \let\botmark\kept@botmark
+   \fi
+   \let\topmark\kept@topmark
+   \mult@info\tw@
+        {Use kept top mark:\MessageBreak
+          \meaning\kept@topmark
+         \MessageBreak
+         Use kept first mark:\MessageBreak
+          \meaning\kept@firstmark
+        \MessageBreak
+         Use kept bot mark:\MessageBreak
+          \meaning\kept@botmark
+        \MessageBreak
+         Produce first mark:\MessageBreak
+          \meaning\firstmark
+        \MessageBreak
+        Produce bot mark:\MessageBreak
+          \meaning\botmark
+         \@gobbletwo}%
+   \setbox\@cclv\vbox{\unvbox\partial@page
+                      \page@sofar}%
+   \@makecol\@outputpage
+     \global\let\kept@topmark\botmark
+     \global\let\kept@firstmark\@empty
+     \global\let\kept@botmark\@empty
+     \mult@info\tw@
+        {(Re)Init top mark:\MessageBreak
+         \meaning\kept@topmark
+         \@gobbletwo}%
+   \global\@colroom\@colht
+   \global \@mparbottom \z@
+   \process@deferreds
+   \@whilesw\if@fcolmade\fi{\@outputpage
+      \global\@colroom\@colht
+      \process@deferreds}%
+   \mult@info\@ne
+     {Colroom:\MessageBreak
+      \the\@colht\space
+              after float space removed
+              = \the\@colroom \@gobble}%
+    \set@mult@vsize \global
+  \fi}
+
+\makeatother
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\small
+\begin{multicols*}{4}
+
+
+\input{circuitikz}
+\input{annotations}
+\input{rendering}
+\input{advanced}
+\input{elements}
+
+\end{multicols*}
+\end{document}

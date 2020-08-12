@@ -1,0 +1,71 @@
+\section{Graphical Rendering}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Classes}
+\textit{Most, but not all, elements have a \say{class}. This allows for uniform referencing of components by class:}\\
+\entry{45mm}{\textbackslash ctikzset\{inductors/scale=.7\}}{scale all $L$s}\\
+\textit{Classes are as follows (legacy are starred):}\\
+{\footnotesize\begin{multicols}{3}\begin{itemize}[leftmargin=0,label={}]
+    \item amplifiers
+    \item batteries
+    \item blocks
+    \item bipole*
+    \item capacitors
+    \item chips
+    \item csources
+    \item default
+    \item diodes
+    \item displays
+    \item electromech\textquotesingle ls
+    \item flipflops
+    \item grounds
+    \item inductors
+    \item instruments
+    \item logic ports
+    \item mechanicals
+    \item misc.
+    \item multipole*
+    \item muxdemuxes
+    \item power suppl\textquotesingle s
+    \item resistors
+    \item RF
+    \item sources
+    \item switches 
+    \item transistors
+    \item tripole*
+    \item tubes
+\end{itemize}\end{multicols}
+}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Mirroring, Inversion, Rotation}
+\textit{Can } \texttt{mirror} \textit{ or } \texttt{invert} \textit{ circuit elements drawn into paths, and } \texttt{rotate} \textit{ any node elements:}
+\entry{45mm}{\textbackslash draw (0,0) to[pD, mirror] (2,0);}{mirroring}\\
+\entry{45mm}{\textbackslash draw (0,0) to[pD, invert] (2,0);}{inverting}\\
+\entry{45mm}{\textbackslash node[not port, rotate=-90] \{\};}{rotating}\\[1mm]
+
+\textit{Use } \texttt{ctikzflip-} \textit{ macro for \say{unflipping} text:}\\
+\code{\textbackslash node[op amp, xscale=-1] \{\textbackslash ctikzflipx\{OA2\} \};}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Scaling}
+\entry{45mm}{\textbackslash ctikzset\{scale=.7\}}{whole doc}\\
+\entry{45mm}{\textbackslash ctikzset\{resistors/scale=.7\}}{by class}\\
+\entry{45mm}{\textbackslash ctikzset\{resistors/height=.6\}}{in 1 dir.}\\
+\entry{45mm}{\textbackslash node\{\}[C,scale=.7]}{by elem.}\\
+\entry{45mm}{\textbackslash node\{\}[xscale=.7]}{in 1 dir.}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Line Thickness}
+\entry{45mm}{\textbackslash ctikzset\{bipoles/thickness=4\}}{by class}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Colors}
+
+\ \\

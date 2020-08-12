@@ -1,0 +1,25 @@
+\begin{circuitikz}[american]
+
+\foreach \i / \l [count=\x] in 
+{capacitor/C,
+curved capacitor/cC,
+ecapacitor/eC,
+variable capacitor/vC,
+capacitive sensor/sC,
+piezoelectric/PZ,
+polar capacitor/pC%
+} 
+\draw(\x*1.2,-1) to[\i,l^={\Large \l}] ++(1,0);
+
+\foreach \i / \l [count=\x] in 
+{cute inductor/L,
+cute choke/,
+variable cute inductor/vL,
+cute inductive sensor/sL,
+variable american inductor/vL,
+american inductive sensor/sL%
+} 
+\draw(\x*1.2,-2.5) to[\i,l^={\Large \l}] ++(1,0);
+
+
+\end{circuitikz}

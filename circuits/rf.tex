@@ -1,0 +1,36 @@
+\begin{circuitikz}[american]
+
+\foreach \type / \l [count=\x] in 
+{bareantenna/barea.,
+bareTXantenna/bareTXa.,
+,
+bareRXantenna/bareRXa.} 
+\node[\type,label={[yshift=10mm,font=\large]above:\l}] at(\x*2,0){};
+%\draw(\x*1.5,0) to[\i,l^={\l}] ++(1.5,0);
+
+\foreach \type / \l [count=\x] in 
+{txantenna,
+rxantenna,
+,
+antenna%
+} 
+\node[\type,label={[font=\large]above:\l}] at(\x*2.5,-3){};
+
+
+\foreach \type / \l [count=\x] in 
+{mstlineshape,
+mslstub,
+msport,
+msrstub} 
+\node[\type,label={[font=\large]above:\l}] at(\x*2.5,-4){};
+%\draw(\x*1.5,0) to[\i,l^={\l}] ++(1.5,0);
+
+\foreach \type / \l [count=\x] in 
+{tlinestub,
+tlineshape,
+match%
+} 
+\node[\type,label={[font=\large]above:\l}] at(\x*2.5,-5){};
+
+
+\end{circuitikz}

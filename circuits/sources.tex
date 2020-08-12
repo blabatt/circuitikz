@@ -1,0 +1,32 @@
+\begin{circuitikz}[american]
+
+\foreach \i / \l [count=\x] in 
+{battery,
+battery1,
+battery2,
+sinusoidal voltage source/sV,
+sinusoidal current source/sI%
+} 
+\draw(\x*1.5,0) to[\i,l^={\l}] ++(1.5,0);
+
+\foreach \i / \l [count=\x] in 
+{controlled voltage source/cvsourceAM,
+controlled current source/ci---AM,
+empty controlled source/ecsource,
+controlled sinusoidal voltage source/csV,
+controlled sinusoidal current source/csI%
+} 
+\draw(\x*1.5,-1.5) to[\i,l^={\footnotesize \l}] ++(1.5,0);
+
+
+\foreach \i / \l [count=\x] in 
+{square voltage source/sqV,
+vsourcetri/tV,
+esource,
+pvsource,
+ioosource%
+} 
+\draw(\x*1.5,-3) to[\i,l^={\footnotesize \l}] ++(1.5,0);
+
+
+\end{circuitikz}

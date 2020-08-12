@@ -1,0 +1,18 @@
+\begin{circuitikz}[american]
+
+\ctikzset{seven seg/width/.initial=0.4}
+\ctikzset{seven seg/thickness/.initial=4pt}
+\ctikzset{seven seg/segment sep/.initial=0.2pt}
+\ctikzset{seven seg/box sep/.initial=1pt}
+\ctikzset{seven seg/color on/.initial=red}
+\ctikzset{seven seg/color off/.initial=gray!20!white}
+
+\ctikzset{seven seg/width=0.2,seven seg/thickness=2pt}
+\foreach \i in {0,...,15} \path (\i/2,0)
+    node[seven segment val=\i dot on box off]{};
+
+\ctikzset{seven seg/color on=black}
+\foreach \i in {0,...,15} \path(\i/2,-1)
+    node[seven segment val=\i dot off box off, fill=gray!30!white]{};
+
+\end{circuitikz}

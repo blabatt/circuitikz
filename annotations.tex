@@ -1,0 +1,63 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Annotations}
+
+%\textit{... where }\texttt{<wire\_opt>}\textit{ $\in$:}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Path Adornments}
+
+\textit{Bipole wire-end shorthands:}\\
+\entry{45mm}{\textbackslash draw (0,0) to[short] (2,0);}{wire only}\\
+\entry{45mm}{\textbackslash draw (0,0) to[open] (2,0);}{open wire}\\
+\entry{45mm}{\textbackslash draw (0,0) to[R,o-o] (2,0);}{open nodes}\\
+\entry{45mm}{\textbackslash draw (0,0) to[R,*-*] (2,0);}{closed}\\
+\entry{45mm}{\textbackslash draw (0,0) to[R, *-o] (2,0);}{mixed ends}\\
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Labels}
+
+\textit{An optional less-than (<) sign changes direction of a flow symbol (i, v, or f); to put a label above or below, use a carat (\textasciicircum) or underscore (\textunderscore) respectively. Use } \texttt{smartlabels}, \texttt{rotatelabels}, \textit{ or } \texttt{straightlabels}, \textit{ for control over automatic label rotations, and } \texttt{halign} \textit{ or } \texttt{valign} \textit{ for label alignment.}
+
+\begin{itemize}
+    \item i= \% current arrow
+    \item v=<volts> \% volt-diff
+    \item f= \% current arrow
+    \item l=<name> \% label
+    \item l2=<lab1> and <lab2>
+\end{itemize}
+
+\textit{Flow \& text placement \& font can be controlled:}\\
+\entry{45mm}{\textbackslash ctikzset\{current/distance=.2\}}{move arrow}\\
+\entry{50mm}{\textbackslash ctikzset\{voltage/label distance=.5\}}{mv label}\\
+\entry{45mm}{\textbackslash ctikzset\{current/font=\textbackslash tiny\}}{font}\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Units}
+
+\begin{multicols}{2}
+\begin{itemize}[label={}]
+    \item \underline{Normal}
+    \item <\textbackslash ohm>
+    \item <\textbackslash milli \textbackslash farad>
+    \item <\textbackslash siemens>
+    \item \underline{SIunits}
+    \item \textbackslash SI \{5\}\{k\textbackslash ohm\}
+    \item \textbackslash SI \{-10\}\{V\}
+    \item \textbackslash SI \{8\}\{S\}
+\end{itemize} 
+\end{multicols}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Anchors}
+\textit{Each element and annotation defines its own set of anchors which can be referenced and moved:}\\
+\resizebox{5cm}{!}{\input{circuits/annotations}}
+
+\ 
+\\

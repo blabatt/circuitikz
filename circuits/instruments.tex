@@ -1,0 +1,24 @@
+\begin{circuitikz}[american]
+
+\foreach \i / \l [count=\x] in 
+{ammeter,
+voltmeter,
+ohmmeter,
+rmeter,
+rmeterwa,
+smeter%
+} 
+\draw(\x*1.5,0) to[\i,l^={\l}] ++(1.5,0);
+
+\foreach \i / \l [count=\x] in 
+{qiprobe,
+qvprobe,
+qpprobe,
+oscope,
+iloop%
+} 
+\draw(\x*1.5,-1.5) to[\i,l^={\l}] ++(1.5,0);
+
+
+
+\end{circuitikz}

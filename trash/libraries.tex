@@ -1,0 +1,63 @@
+\section{Libraries}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Angles}
+\entry{53mm}{\textbackslash draw (2,0) coordinate (A) -- ...} {setup}\\
+\entry{53mm}{\phantom{xx} pic[radius=1cm] \{angle = C-{}-B-{}-A\}}{invke}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Automata}
+\entry{45mm}{\textbackslash node[state,initial](q\_0)}{init state}\\
+\entry{45mm}{\textbackslash node[state](q\_1)}{norm\textquotesingle l state}\\
+\entry{45mm}{\textbackslash node[state](q\_2)[right=of q\_0]}{w/ opt\textquotesingle ns}\\
+\entry{45mm}{\textbackslash node[state,accepting](q\_4)}{term state}\\
+
+\entry{50mm}{\textbackslash path[->] (q\_0) edge node\{a\}(q\_1)}{an edge}\\
+\entry{50mm}{\dots edge [loop above] node\{b\}}{self-ref}\\
+
+\textit{Options $\in$:}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% for some reason, this bombs the document...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+{\scriptsize \begin{multicols}{2}\begin{itemize}[leftmargin=0mm,label={}]
+    \item state with output
+    \item state
+    \item every state
+    \item initial by arrow
+    \item initial text
+    \item initial where
+    \item initial distance
+    \item every initial by arrow
+    \item initial above
+    \item initial right
+    \item initial by diamond
+    \item accepting by double
+    %\item accepting by arrow
+    %\item accepting where left
+    %\item initial distance
+\end{itemize}\end{multicols}}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Background}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Calendar}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Entity-Relationship Diagram}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Mind Map}
+

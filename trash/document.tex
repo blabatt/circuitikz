@@ -1,0 +1,143 @@
+\section{Document}
+
+\subsection*{Headers \& Footers}
+
+
+
+\begin{minipage}{6.5cm}
+\textbackslash usepackage\{\href{http://mirrors.ctan.org/macros/latex/contrib/fancyhdr/fancyhdr.pdf}{fancyhdr}\}, then define styles: \\
+\begin{lstlisting}
+\fancypagestyle{appendix}{%
+ \fancyhead{}
+ \renewcommand{\headrulewidth}{0pt}
+}
+\end{lstlisting}
+... and invoke: \\
+\begin{lstlisting}
+\pagestyle{appendix}
+\thispagestyle{otherstyle}
+\fancyhead[RO,LE]{header \thepage}
+\end{lstlisting}
+\end{minipage}
+
+
+\subsection*{Document Types}
+
+\begin{code}{6}
+\begin{lstlisting}
+(*@ \textbackslash @*)documentclass{article}
+\end{lstlisting}
+\end{code}
+
+\begin{multicols}{3}
+\begin{itemize}
+    \item article 
+    \item report 
+    \item extreport 
+    \item slides
+    \item amsart 
+    \item beamer
+    \item book 
+\end{itemize}
+\end{multicols}
+
+\subsection*{Sections \& Contents}
+\begin{minipage}{6.5cm}
+Customize section styles: 
+\begin{lstlisting}
+\titleformat{\section}
+\titlespacing{\section}{}{}{}
+\end{lstlisting} 
+... and invoke:
+\begin{lstlisting}
+\part{pt1}
+\chapter{ch1}
+\section{sec1}
+\section{sec2}
+\subsection{sub}
+\end{lstlisting} 
+Use \textbackslash usepackage\{\href{http://mirrors.ctan.org/macros/latex/contrib/titlesec/titlesec.pdf}{titletoc}\} then: 
+\begin{lstlisting}
+\tableofcontents
+\end{lstlisting}
+\end{minipage}
+
+\subsection*{Layout}
+
+\begin{minipage}{6cm}
+Margins:
+\begin{lstlisting}
+\usepackage{geometry}[margin=5mm,]
+\end{lstlisting}
+Lanscape layout:
+\begin{lstlisting}
+\usepackage{lscape}
+\end{lstlisting}
+\end{minipage}
+
+\subsection*{Spacing, Rules, Pagination}
+
+\begin{tabular}{l l}
+\begin{lstlisting}
+\thepage
+\end{lstlisting}
+& \% current page num \\
+
+\begin{lstlisting}
+\newpage
+\end{lstlisting} 
+& \% page break \\
+
+\begin{lstlisting}
+\clearpage
+\end{lstlisting} 
+& \% page break \\
+
+\begin{lstlisting}
+\vspace{3mm}
+\end{lstlisting}
+& \% 3mm vert. sep \\
+
+\begin{lstlisting}
+\hspace{5mm}
+\end{lstlisting}
+& \% 5mm horiz. sep \\
+
+\end{tabular}
+
+\subsection*{References}
+
+\begin{tabular}{l l}
+\begin{lstlisting}
+\label{my_lbl}
+\end{lstlisting}
+& \% anchor a reference \\
+
+\begin{lstlisting}
+\ref{my_lbl}
+\end{lstlisting}
+& \% refer to reference \\
+
+\begin{lstlisting}
+~\pageref{my_lbl}
+\end{lstlisting}
+& \% ref's page \# \\
+
+
+
+\end{tabular}
+
+\subsection*{\href{https://www.overleaf.com/learn/latex/Footnotes}{Footnotes}}
+
+\begin{minipage}{6cm}
+\begin{lstlisting}
+\footnote[3]{foot text}
+\end{lstlisting}
+\end{minipage} \\
+Puts \say{foot text} into 3\textsuperscript{rd} note.
+Alternatively, \textbackslash usepackage\{\href{http://mirrors.ctan.org/macros/latex/contrib/footmisc/footmisc.pdf}{footmisc}\} for non-numeric foots. \\
+
+\subsection*{Overlays}
+
+
+\ \\

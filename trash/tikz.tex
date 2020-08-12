@@ -1,0 +1,161 @@
+\section{\href{http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf}{Tikz}}
+
+\textit{General invocations:}\\
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\begin{tikzpicture}} [<option>*}]{... 
+\end{lstlisting}\end{minipage}
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\tcbset{<option>*} 
+\end{lstlisting}\end{minipage}
+\code{\textbackslash begin\{tikzpicture\}[<setting>*] ...} \% start envt \\
+\code{\textbackslash tikz\{ ... \}} \% inline diagram \\
+\code{\textbackslash tcbset\{<setting>*\}} \% $\Delta$ settings mid-course
+
+\textit{Possible options are many, including: } 
+{\scriptsize \begin{multicols}{2}
+\begin{itemize}
+    \item remember picture
+    \item overlay
+    \item {[x|y]} = (coord)
+    \item execute at end picture
+    \item test
+\end{itemize}
+\end{multicols}}
+
+%\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Styles \& Aliases}
+
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\begin{tikzpicture}} 
+    [<alias>/.style={<style>*}] 
+\end{lstlisting}\end{minipage}
+
+\textit{Possible styles include: } \\
+\begin{tabularx}{5cm}{l l}
+    \underline{style} & \underline{example val} \\
+    inner sep & 2pt\\
+    text & green \\
+    font & small \\
+    anchor & west \\
+    align & left \\
+    pos & .5 \\
+    decorate & --\\
+    decoration & snake \\
+    fill & green \\
+    color & green\\
+    draw & green \\
+    rounded corners & .2pt\\
+\end{tabularx}  
+\vspace{2mm}
+
+\textit{Styles can be appended to or parameterized:}\\
+\code{[mystyle/.style=\{draw=\#1,fill=\#1!50\}]}\\
+\code{[mystyle/.append style=blue!50]}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Organization}
+\entry{45mm}{\textbackslash begin\{scope\}[<option>*]}{sub-evnmt}\\
+\entry{45mm}{\textbackslash scoped[on background layer]}{one-liner}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Data \& Control}
+\textit{Wrap the following in } \texttt{\textbackslash tikzmath\{...\} }:\\
+\entry{44mm}{\textbackslash a = 4*5+6;}{assignment}\\
+\entry{44mm}{if \textbackslash k>170 then \{let \textbackslash c = blue;\}}{conditional}\\
+\entry{44mm}{for \textbackslash x in \{\dots \}}{looping}\\
+\entry{54mm}{function product(\textbackslash x,\textbackslash y)\{return\textbackslash x*\textbackslash y;\};}{func}\\
+
+
+\textit{Low-level parsing is similar to \LaTeX :}\\
+\entry{53mm}{\textbackslash def\textbackslash myarray\{\{1,"two",2+1,sin(\textbackslash i*5)\}\}}{array}\\
+\entry{40mm}{\textbackslash pgfparse \{\textbackslash myarray[3]\}}{extract from}\\
+\entry{40mm}{\textbackslash foreach \textbackslash i in\{0,...,6\}}{loop over}\\
+\entry{40mm}{\textbackslash pgfmathparse\{sqrt(10)\}}{apply func}\\
+\entry{40mm}{\textbackslash pgfmathparse\{pi\}}{constant $\pi$}\\
+\entry{40mm}{\textbackslash pgfmathresult}{return result}\\
+
+\textit{$\exists$ many built-in math functions:}
+\begin{multicols}{4}
+{\scriptsize 
+\begin{itemize}[leftmargin=0mm,label={}]
+    \item abs
+    \item acos
+    \item add
+    \item and
+    \item array
+    \item asin
+    \item atan
+    \item atan2
+    \item bin
+    \item ceil
+    \item cos
+    \item cosec
+    \item cosh
+    \item cot
+    \item deg
+    \item depth
+    \item div
+    \item divide
+    \item e
+    \item equal
+    \item factorial
+    \item false
+    \item floor
+    \item frac
+    \item gcd
+    \item greater
+    \item height
+    \item {[H|h]}ex
+    \item int
+    \item ifthnels
+    \item iseven
+    \item isodd
+    \item isprime
+    \item less
+    \item ln
+    \item log10
+    \item log2
+    \item max
+    \item min
+    \item mod
+    \item multiply
+    \item neg
+    \item not
+    \item notequal
+    \item notgreater
+    \item notless
+    \item oct
+    \item or
+    \item pi
+    \item pow
+    \item rad
+    \item rand
+    \item real
+    \item rnd
+    \item round
+    \item scalar
+    \item sec
+    \item sign
+    \item sin
+    \item sinh
+    \item sqrt
+    \item subtract
+    \item tan
+    \item tanh
+    \item true
+    \item veclen
+    \item width
+\end{itemize}
+}
+\end{multicols}
+
+
+
+
+\ \\

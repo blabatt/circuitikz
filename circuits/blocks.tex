@@ -1,0 +1,45 @@
+\begin{circuitikz}[american]
+
+\foreach \type / \l [count=\x] in 
+{mixer,
+adder,
+oscillator/osc.,
+circulator/circ.,
+twoportshape/twoport,
+vcoshape/vco,
+bandpassshape/bandpass,
+bandstopshape/bandstop,
+highpassshape/highpass%
+} 
+\node[\type,label={[font=\footnotesize]above:\l}] at(\x*1.1,0){};
+
+\foreach \type / \l [count=\x] in 
+{lowpassshape/lowpass,
+adcshape/adc,
+dacshape/dac,
+dspshape/dsp,
+fftshape/fft,
+ampshape/amp,
+vampshape/vamp,
+piattenuatorshape/pi atten.,
+vpiattenuatorshape/vpi atten.%
+} 
+\node[\type,label={[font=\footnotesize]above:\l}] at(\x*1.1,-1.5){};
+
+
+\foreach \type / \l [count=\x] in 
+{tattenuatorshape/t atten.,
+phaseshiftershape/$\phi$-shift,
+vphaseshiftershape/v$\phi$-shift,
+detectorshape/detector,
+sacdcshape/sacdc,
+sdcacshape/sdcac,
+tdcacshape/tdcac,
+tacdcshape/tacdc,
+gridnode/grid%
+} 
+\node[\type,label={[font=\footnotesize]above:\l}] at(\x*1.1,-3){};
+
+
+
+\end{circuitikz}

@@ -1,0 +1,27 @@
+\begin{circuitikz}[american]
+
+\foreach \type / \l [count=\x] in 
+{ground,
+tlground,
+rground,
+sground,
+tground,
+nground,
+pground,
+cground,
+eground%
+} 
+\node[\type,label={[font=\footnotesize]above:\type}] at(\x*1.2,0){};
+
+\node[vcc] at(12,0){vcc};
+\node[vee,label={vee}] at(13,0){};
+
+
+%\foreach \type / \l [count=\x] in 
+%{vcc,
+%vee%
+%} 
+%\node[\type] at(\x*1.5,-1.5){\type};
+
+
+\end{circuitikz}

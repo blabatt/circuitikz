@@ -1,0 +1,71 @@
+\section{Packages}
+
+\subsection*{\href{http://mirrors.ctan.org/macros/latex/contrib/dirtytalk/dirtytalk.pdf}{dirtytalk}}
+\begin{minipage}{6.0cm}
+\begin{lstlisting}
+\say{hi there} % (*@ \say{hi there} @*)
+\end{lstlisting}
+\end{minipage} 
+
+\subsection*{\href{http://mirrors.ctan.org/macros/latex/contrib/comment/comment.pdf}{comment}}
+\begin{minipage}{4cm}
+\begin{lstlisting}
+\begin{comment} 
+parsed, not compiled ...
+multiple lines ...
+\end{comment}
+\end{lstlisting}
+\end{minipage}
+
+\subsection*{\href{http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf}{listings}}
+General usage pattern: \\
+\begin{minipage}{6.0cm}
+\begin{lstlisting}
+\lstset{<setting>}
+\begin{lstlisting}[<setting>]
+for(i =0; i < 5; i++){
+    print("hello");
+}
+end{lstlisting}
+\end{lstlisting}
+Can also list a separate source file: \\
+\begin{lstlisting}
+\lstinputlisting
+    [language=Python]{src.py}
+\end{lstlisting}
+Settings include (among others):\\
+\begin{itemize}
+    \item backgroundcolor=...
+    \item commentstyle=\textbackslash color\{green\}
+    \item tabsize=[0-9]*
+    \item language=[Python|Octave|...]
+    \item numbers=[left|right|none]
+    \item escapeinside=\{(*@\}\{@*)\}
+\end{itemize} 
+Languages include (among many more): \\
+\begin{multicols}{3}
+\begin{itemize}
+    \item bash
+    \item C
+    \item erlang
+    \item HTML
+    \item Lisp
+    \item PHP
+    \item R
+    \item SQL
+    \item Verilog
+\end{itemize}
+\end{multicols}
+\end{minipage}
+
+\subsection*{\href{http://mirrors.ctan.org/macros/latex/contrib/hyperref/doc/manual.pdf}{hyperref}}
+\begin{minipage}{6.5cm}
+\begin{lstlisting}
+\href{http://google.com}{google}
+\end{lstlisting}
+\end{minipage}
+
+
+\subsection*{}
+
+\subsection*{}

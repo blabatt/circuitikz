@@ -1,0 +1,14 @@
+\begin{circuitikz}[american]
+
+\foreach \type / \l [count=\x] in 
+{%
+latch,
+flipflop SR,
+flipflop D,
+flipflop T,
+flipflop JK} 
+\node[\type,label={[yshift=12mm,font=\LARGE]\l}] at(\x*3,0){};
+
+
+
+\end{circuitikz}

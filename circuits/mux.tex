@@ -1,0 +1,10 @@
+\begin{circuitikz}[american]
+
+\tikzset{demux/.style={muxdemux, muxdemux def={Lh=4, Rh=8, NL=1, NB=3, NR=8}}}
+\tikzset{one bit adder/.style={muxdemux, muxdemux def={Lh=4, NL=2, Rh=2, NB=1, w=1.5, inset w=.5, inset Lh=2, inset Rh=1.5}}}
+
+\node[demux,label={[yshift=10mm,font=\Large]demux}] at(0,0){};
+\node[one bit adder,label={[yshift=10mm,font=\Large]one bit addr}] at(3,0){};
+
+
+\end{circuitikz}

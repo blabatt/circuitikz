@@ -1,0 +1,177 @@
+\section{Elements}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Grounds \& Supplies}
+
+
+\resizebox{6cm}{!}{\input{circuits/grounds}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Resistive Bipoles}
+\resizebox{4.5cm}{!}{\input{circuits/resistors}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Capacitors \& Inductors}
+\resizebox{5cm}{!}{\input{circuits/capacitors}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Diodes}
+
+\resizebox{6cm}{!}{\input{circuits/diodes}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Sources \& Generators}
+\resizebox{4cm}{!}{\input{circuits/sources}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Instruments}
+\resizebox{6cm}{!}{\input{circuits/instruments}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Mechanical}
+\resizebox{4.5cm}{!}{\input{circuits/mechanical}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Miscellaneous Bipoles}
+\resizebox{4.5cm}{!}{\input{circuits/misc}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection*{Buses}
+%\resizebox{6cm}{!}{\input{circuits/buses}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Crossings}
+\resizebox{6cm}{!}{\input{circuits/crossings}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Block Diagrams}
+\resizebox{6cm}{!}{\input{circuits/blocks}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Transistors}
+\resizebox{6cm}{!}{\input{circuits/transistors}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Electronic Tubes}
+\resizebox{6cm}{!}{\input{circuits/tubes}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RF Components}
+\resizebox{6cm}{!}{\input{circuits/rf}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection*{Electro-Mechanical Devices}
+%\resizebox{6cm}{!}{\input{circuits/em}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Transformers}
+\resizebox{5cm}{!}{\input{circuits/transformers}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Amplifiers}
+\resizebox{6cm}{!}{\input{circuits/amps}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Switches}
+\resizebox{6cm}{!}{\input{circuits/switches}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Logic Gates}
+
+\textit{All are nodes and end in \say{port} except schmitts. Buffers and schmitts can be used in the path style:}\\
+\resizebox{6cm}{!}{\input{circuits/logic}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Flip-Flops}
+
+\textit{Customize further with } \texttt{ flipflop def} \textit{ which takes several options for pin names (} \texttt{t<n>} \textit{), and for the clock signal (} \texttt{c<n>} \textit{. Can create not signal with } \texttt{\textbackslash ctikztextnot\{\}} \textit{macro.}\\
+\resizebox{6cm}{!}{\input{circuits/ff}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Multiplexers}
+\textit{Customize the number of pins left (}\texttt{NL}\textit{), bottom (}\texttt{NB}\textit{) and right(}\texttt{NR}\textit{); and relative size left (}\texttt{Lh}\textit{) and right (}\texttt{Rh}\textit{):}\\
+\code{demux/.style=\{muxdemux muxdemux }\\
+\code{def=\{Lh=4, Rh=8, NL=1, NB=3, NR=8\}\}}\\
+\textit{Can create insets with } \texttt{w}, \texttt{inset w}, \texttt{inset Lh}:\\
+\code{one bit adder/.style=\{muxdemux muxdemux }\\
+\code{\footnotesize def=\{... w=1.5, inset w=.5, inset Lh=2, inset Rh=1.5\}\}}\\
+\resizebox{3cm}{!}{\input{circuits/mux}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Chips}
+
+
+\textit{Customize chips with options $\in$:}
+{\footnotesize \begin{multicols}{2}\begin{itemize}[label={}]
+    \item width
+    \item pin spacing
+    \item extn. pins width
+    \item extn. pad fraction
+    \item num pins
+    \item hide numbers
+    \item thickness
+\end{itemize}\end{multicols}
+}
+
+
+{\footnotesize 
+\code{node[dipchip,num pins=12,hide numbers, }\\
+\code{\phantom{xx}external pins width=0.3, external pad fraction=4]}\\
+\code{node[qfpchip,num pins=16, external pad fraction=6]}\\}
+
+\resizebox{4cm}{!}{\input{circuits/chip}}
+\vspace{2mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Seven-Segment Displays}
+\textit{Options $\in$:}
+{\footnotesize \begin{multicols}{3}\begin{itemize}[label={}]
+    \item width
+    \item thickness
+    \item segment sep
+    \item box sep
+    \item color on
+    \item color off
+\end{itemize}\end{multicols}
+}
+\code{\textbackslash ctikzset\{sevenseg/color on=black\}}\\
+
+\textit{Examples:}\\
+\code{\textbackslash foreach \textbackslash i in \{0,...,15\} \textbackslash path (\textbackslash i,0)}\\
+\code{\phantom{xx}node[seven segment val=\textbackslash i dot on box off]\{\};}\\
+\code{\textbackslash foreach \textbackslash i in \{0,...,15\} \textbackslash path(\textbackslash i/2,-1)}\\
+\code{\phantom{xx}node[seven segment val=\textbackslash i dot off box off,}\\
+\code{\phantom{xx}fill=gray!30!white]\{\};}\\
+\resizebox{6cm}{!}{\input{circuits/7seg}}
+
+\vspace{2mm}
+

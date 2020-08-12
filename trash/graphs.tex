@@ -1,0 +1,121 @@
+\section{Graphs}
+
+\textit{Edges connect nodes or groups of nodes. Edges, nodes, groups, and graphs all have options.}\\
+\begin{minipage}{6.5cm}\begin{lstlisting}
+\graph[<graph_opt'n>*]{<graph_spec'n>} 
+\end{lstlisting}\end{minipage}
+
+\entry{44mm}{\textbackslash graph\{ a -> \{ b, c \} -> d \} }{basic examp.}\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Graph-level Options}
+{\scriptsize \begin{multicols}{3}\begin{itemize}[leftmargin=0mm,label={}]
+    \item nodes 
+    \item edges 
+    \item edge node 
+    \item edge label
+    \item edge quotes
+    \item left anchor 
+    \item fresh nodes 
+    \item simple 
+    \item multi 
+    \item grow[up|down]
+    \item grow[left|right]
+    \item branch[up|down]
+    \item branch[left|right]
+    \item name separator
+    \item typeset   
+    \item empty nodes
+    \item trie
+    \item layered layout
+    \item quick
+    \item color class
+\end{itemize}\end{multicols}}
+\entry{45mm}{\textbackslash graph [grow down] }{placement...}\\
+\entry{45mm}{\textbackslash graph [branch right] }{... options}\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Graph Specifications}
+\textit{Graph specification (within } \texttt{\textbackslash graph\{\dots\}} \textit{) comprise a list of } \texttt{<group\_spec>} \textit{s, each of which comprises a list of} \texttt{<chain\_spec>} \textit{s, each of which contains a list of nodes separated by edges.} \\
+
+\entry{45mm}{x1/\$x\_1\$ -> x2 [as=\$x\_2\$, red] }{naming}\\
+\entry{45mm}{b -{}-[thick] \{c, d\}}{edge optns}\\
+\entry{45mm}{b -{}- \{c [> \textquotedbl foo \textquotedbl]\}}{edge names}
+\entry{45mm}{x -> (myNode) -> y}{ref predef\textquotesingle d}
+
+\textit{Options for } \textit{<group\_spec>} \textit{ $\in$: } \texttt{number nodes}, \texttt{}.\\
+\textit{Options for } \textit{<chain\_spec>} \textit{ $\in$: } \texttt{name}, \texttt{edges}. 
+\textit{Options for } \textit{<node\_spec>} \textit{ $\in$: } \texttt{as}, \texttt{set}, \texttt{[source|target]edge[style|node]}. 
+\textit{Options for } \textit{<edge\_spec>} \textit{ $\in$: } \texttt{<color>}, \texttt{\textquotedbl <label>\textquotedbl}. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Macros, Colors, \& Operators}
+
+\textit{From graph theory, \say{colors} \& \say{operators} allow more complex / elegant graph descriptions.}\\
+\entry{45mm}{\textbackslash graph [color class=from, ...]\{}{create clr}\\
+\entry{45mm}{[complete bipartite=\{x\}\{y\}]}{use in optr}\\
+\entry{45mm}{\{ [x] x\_1, x\_2 \}, \{ [y] y\_1, y\_2 \} \}}{assign clr}\\
+
+\textit{Define operator with } \texttt{operator} \textit{ or } \texttt{default edge operator} \textit{graph options. Parameter value is custom operator code like: }\\
+\code{declare=\{star\}\{root-{}- \{\textbackslash foreach\textbackslash i in \{1,...,\textbackslash n\} \{  \textbackslash i\} \}}
+\textit{... or use a pre-fab join or group operator like: }
+
+{\footnotesize
+\begin{tabularx}{5cm}{@{}l l}
+    \underline{group} & \underline{join} \\
+    clique & complete bipartite \\
+    induced indep\textquotesingle t set & induced comp\textquotesingle t bipartite \\
+    cycle & matching \\
+    induced cycle & matching and star \\
+    path & butterfly \\
+    induced path &  \\
+\end{tabularx}} \ \\
+\vspace{1mm}
+
+\textit{Macros afford common graph types:}\\
+\entry{45mm}{\textbackslash graph \{ subgraph K\_n [...]\}}{type $K_n$}
+{\footnotesize\begin{multicols}{3}\begin{itemize}[label={}]
+    \item I\_n
+    \item K\_n
+    \item I\_nm
+    \item K\_nm
+    \item P\_n
+    \item C\_n
+    \item Grid\_n
+\end{itemize}\end{multicols}}
+\vspace{2mm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Placement Strategies}
+\textit{Can place manually, along grid or circle, according to node sizes or node-level in graph, or with custom code. Some options for each approach:}\\
+{\scriptsize 
+\begin{tabularx}{6cm}{@{}l l l l}
+    \underline{manual} & \underline{grid} & \underline{size} & \underline{circular} \\
+    no placemt & chain shift & grow left sep & circ. placm\textquotesingle t \\
+    x & gr\textquotesingle p shift & grow up sep & chain plr shift \\
+    y & grown up & b\textquotesingle ch r\textquotesingle t sep & group plr shift \\
+     & grow left & b\textquotesingle ch up sep & radius \\
+     & b\textquotesingle ch up &  & phase  \\
+     & b\textquotesingle ch left &  & clockwise \\
+      & grid placm\textquotesingle t &  & c\textquotesingle clockwise \\
+\end{tabularx}} \ \\
+\vspace{1mm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Tree}
+\textit{A less ornate alternative to bona-fide graphs:}\\
+\entry{40mm}{\textbackslash node[grow'=up] \{root\} }{various options}\\
+\entry{40mm}{\phantom{xx}child \{node \{left\}\}}{node as child}\\
+\entry{40mm}{\phantom{xx}child \{[fill] circle\}}{arb. child}\\
+\entry{40mm}{\phantom{xx}child[grow=100] \{ node\}}{direction $\angle$}\\
+\textit{Customize how parent-child edges are drawn with } \texttt{edge from parent node} \textit{option.}\\
+
+\ \\

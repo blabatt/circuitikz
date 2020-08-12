@@ -1,0 +1,40 @@
+\section{\href{https://en.wikibooks.org/wiki/LaTeX/Boxes}{Boxes}}
+
+\subsection*{parbox}
+\begin{lstlisting}
+\parbox[t][2cm]{...}
+\end{lstlisting}
+Encapsulate content in 2cm-wide box. Fully:\\
+\textbackslash parbox[pos][height][contentpos]\{width\}\{text\} \\
+where pos, centerpos $\in$ [\underline{t}op|\underline{b}|\underline{c}enter], centerpos can also be \underline{s}pread.
+
+\subsection*{minipage}
+
+\subsection*{\href{http://mirrors.ctan.org/macros/latex/required/tools/multicol.pdf}{multicols}}
+\begin{lstlisting}
+\begin{multicols}{3}
+\begin{itemize}
+    \item bash
+    \item C
+    \item erlang
+    \item HTML
+    \item Lisp
+    \item PHP
+\end{itemize}
+\end{multicols}
+\end{lstlisting}
+
+
+\subsection*{\href{https://www.overleaf.com/latex/examples/drawing-coloured-boxes-using-tcolorbox/pvknncpjyfbp}{tcolorbox}}
+Large package (\href{http://mirrors.ctan.org/macros/latex/contrib/tcolorbox/tcolorbox.pdf}{300+pp}) supporting: box breaking, embedded tables and pictures, skins, etc. 
+\begin{lstlisting}
+\begin{tcolorbox}[<setting>*]
+\end{lstlisting}
+Settings include: 
+\begin{itemize}
+    \item width
+    \item fontupper
+    \item tabularx
+\end{itemize}
+
+\ \\ 

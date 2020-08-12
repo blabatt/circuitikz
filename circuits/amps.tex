@@ -1,0 +1,21 @@
+\begin{circuitikz}[american]
+
+\foreach \type / \l [count=\x] in 
+{op amp,
+en amp,
+fd op amp,
+gm amp%
+} 
+\node[\type,label={[yshift=10mm,font=\Large]\l}] at(\x*3,0){};
+
+\foreach \type / \l [count=\x] in 
+{inst amp,
+fd inst amp, 
+inst amp ra,
+plain amp,
+buffer%
+} 
+\node[\type,label={[yshift=10mm,font=\Large]\l}] at(\x*3,-4){};
+
+
+\end{circuitikz}

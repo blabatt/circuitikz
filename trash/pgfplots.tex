@@ -1,0 +1,107 @@
+\section{\href{http://mirrors.ctan.org/graphics/pgf/contrib/pgfplots/doc/pgfplots.pdf}{Pgfplots}}
+\textit{Basic structure:}\\
+\begin{minipage}{6.5cm}
+\begin{lstlisting}
+\begin{tikzpicture}
+  \begin{axis}[<ax_setting>*]
+    \addplot[+|3][<pl_setting>*]
+      <plot>
+    [\draw{...}]*
+    [\node{...}]*
+    [\legend[]]?
+\end{lstlisting}
+\end{minipage}
+\textit{... where }\texttt{<ax\_setting>}\textit{ $\in$:}
+
+
+\begin{multicols}{2}
+{\footnotesize 
+\begin{itemize}[label={}]
+    \item {[x|y]}[min|max]
+    \item {[x|y]}label
+    \item {[x|y]}tick
+    \item {[x|y]}ticklabels
+    \item tick label style
+    \item axis lines
+    \item grid
+    \item domain
+    \item mark
+    \item no marks
+    \item samples
+    \item {\scriptsize trig format plots}
+    \item {\scriptsize axis line style}
+    \item {\scriptsize legend pos}
+\end{itemize}
+}
+\end{multicols}
+
+\textit{Assign } \texttt{\textbackslash empty} \textit{ for non-drawn entity.}\\
+\textit{... and }\texttt{<pl\_setting>}\textit{ $\in$:}
+
+\begin{multicols}{2}
+\begin{itemize}[label={}]
+    \item {[ultra]thick}
+    \item <color>
+    \item 
+\end{itemize}
+\end{multicols} 
+
+\textit{... and }\texttt{<plot>}\textit{ $\in$:}
+\begin{itemize}[label={}]
+    \item coordinates \{(<tuple>)*\}
+    \item fill between[...]
+    \item table \{file.dat\}
+    \item table \{<inline\_data>\}
+    \item \{<math\_expression>\}
+\end{itemize}
+
+\textit{For example: } \\
+\begin{minipage}{6.5cm}
+\begin{lstlisting}
+\begin{tikzpicture}
+\begin{axis}
+[legend cell align=left,
+legend pos=outer north east]
+  \addplot coord's {(0,0) (1,1)};
+  \addplot coord's {(0,1) (1,2)};
+  \addplot coord's {(0,2) (1,3)};
+  \legend{a,fine,legend}
+\end{axis}
+\end{tikzpicture}
+\end{lstlisting}
+\end{minipage}\ \\
+
+\textit{Many more examples \href{http://pgfplots.sourceforge.net/gallery.html}{\underline{here}}!}
+ \ \\
+ 
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Plot Path Operation}
+\textit{A simplified, tikz-native alternative to pgfplots.}\\
+\entry{41mm}{\textbackslash draw plot coordinates }{plot on a path}\\
+\entry{41mm}{\phantom{xx}\{ (0,0) (1,2) (3,0) ... \}}{simple coords}\\
+\entry{41mm}{\textbackslash draw plot[mark=x,smooth] }{options}\\
+\entry{41mm}{\phantom{xx}file \{folder/file.table\}}{extern data}\\
+\entry{41mm}{\textbackslash draw plot (\textbackslash x, \{sin(\textbackslash x r)\})}{a function}\\
+\entry{48mm}{\textbackslash draw [domain=-3:3,variable=\textbackslash t] }{paramet.}\\
+\entry{41mm}{\phantom{xx}plot(\{\textbackslash sin(\textbackslash t r)\},\{cos(\textbackslash t r)\})}{circle}\\[1mm]
+\textit{Options:}
+{\scriptsize \begin{multicols}{3}\begin{itemize}[leftmargin=0mm,label={}]
+    \item variable
+    \item samples
+    \item domain
+    \item samples at
+    \item {[x|y]range}
+    \item mark
+    \item mark repeat
+    \item mark phase
+    \item mark indices
+    \item mark size
+    \item smooth
+    \item tension
+    \item const plot
+    \item jump mark
+    \item {[x|y]}comb
+    \item polar comb
+    \item {[x|y]}bar
+\end{itemize}\end{multicols}}
